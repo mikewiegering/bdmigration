@@ -3,7 +3,11 @@
 import requests
 from getpass import getpass
 
-apic = '192.168.2.149'
+# Setup the base lab variables
+
+print("Let's set up the Lab for the Demo now.")
+print('What is the IP address of the APIC?')
+apic = input()
 user = getpass('what is your apic username?')
 password = getpass('what is your apic password?')
 
@@ -12,7 +16,7 @@ s = requests.session()
 
 # first call is to authenticate into the apic
 
-url = "https://192.168.2.149/api/aaaLogin.json"
+url = "https://%s/api/aaaLogin.json" % (apic)
 
 payload = "{\n    \"aaaUser\": {\n        \"attributes\": {\n            \"name\": \"%s\",\n            \"pwd\": \"%s\"\n        }\n    }\n}" % (user, password)
     
