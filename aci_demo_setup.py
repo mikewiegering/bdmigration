@@ -2,8 +2,15 @@
 
 import requests
 from getpass import getpass
+import csv
+
 
 # Setup the base lab variables
+
+with open("ACI PostMan Variable Values.csv", "r") as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row)
 
 print("Let's set up the Lab for the Demo now.")
 print('What is the IP address of the APIC?')
