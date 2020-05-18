@@ -1,0 +1,14 @@
+﻿tenant,vrf,L3out,app-profile,old-bd,new-bd,subnet-network,subnet-ip,subnet-mask,epg
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_10,10.0.10,1,24,epg_10
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_20,10.0.20,1,24,epg_20
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_30,10.0.30,1,24,epg_30
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_40,10.0.40,1,24,epg_40
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_50,10.0.50,1,24,epg_50
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_60,10.0.60,1,24,epg_60
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_70,10.0.70,1,24,epg_70
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_80,10.0.80,1,24,epg_80
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_90,10.0.90,1,24,epg_90
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_100,10.0.100,1,24,epg_100
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_110,10.0.110,1,24,epg_110
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_120,10.0.120,1,24,epg_120
+bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_130,10.0.130,1,24,epg_130
