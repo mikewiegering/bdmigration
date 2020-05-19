@@ -97,7 +97,7 @@ with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
             'Content-Type': 'application/json'
         }
 
-        response = requests.request("POST", url, headers=headers, data = payload)
+        response = requests.request("POST", url, headers=headers, data = payload, verify = False)
 
         print(response.text.encode('utf8'))
 
@@ -110,6 +110,6 @@ with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
             'Content-Type': 'application/json'
         }
 
-        response = requests.request("POST", url, headers=headers, data = payload)
+        response = requests.request("POST", url, headers=headers, data = payload, verify = False)
 
         print(response.text.encode('utf8'))
