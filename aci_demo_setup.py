@@ -17,6 +17,16 @@ print('What is the IP address of the APIC?')
 apic = input()
 user = getpass('what is your apic username?')
 password = getpass('what is your apic password?')
+print('what is the name of the new tenant?')
+tenant = input()
+print('what is the name of the new vrf?')
+vrf = input()
+print('what would you like to call your app profile?')
+app_profile = input()
+print('what is the Old BD?')
+old_bd = input()
+
+
 
 # set session persistance for all api calls in this file
 s = requests.session()
@@ -37,8 +47,6 @@ print(response.text.encode('utf8'))
 
 # create a new tenant
 
-print('What is the name of the new tenant?')
-tenant = input()
 
 
 url = "https://192.168.2.149/api/node/mo/uni/tn-%s.json" % (tenant)
@@ -54,10 +62,6 @@ print(response.text.encode('utf8'))
 
 # create an app profile
 
-print('what would you like to call your app profile?')
-app_profile = input()
-
-
 url = "https://%s/api/node/mo/uni/tn-%s/ap-%s.json" % (apic, tenant, app_profile)
 
 payload = "{\n    \"fvAp\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-%s/ap-%s\",\n            \"name\": \"%s\",\n            \"rn\": \"ap-%s\",\n            \"status\": \"created\"\n        },\n        \"children\": []\n    }\n}" % (tenant, app_profile, app_profile, app_profile)
@@ -67,26 +71,31 @@ headers = {
 
 response = s.request("POST", url, headers=headers, data = payload, verify = False)
 
-print(response.url = "https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/ctx-{{vrf}}.json"
+print(response.text.encode('utf8'))
 
-payload = "{\n    \"fvCtx\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-{{tenant}}/ctx-{{vrf}}\",\n            \"name\": \"{{vrf}}\",\n            \"rn\": \"ctx-{{vrf}}\",\n            \"status\": \"created\"\n        },\n        \"children\": []\n    }\n}"
+# create a vrf
+
+url = "https://%s/api/node/mo/uni/tn-%s/ctx-%s.json" % (apic, tenant, vrf)
+
+payload = "{\n    \"fvCtx\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-%s/ctx-%s\",\n            \"name\": \%s\",\n            \"rn\": \"ctx-%s\",\n            \"status\": \"created\"\n        },\n        \"children\": []\n    }\n}" % (tenant, vrf, vrf, vrf)
 headers = {
     'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = s.request("POST", url, headers=headers, data = payload, verify = False)
 
+print(response.text.encode('utf8'))
 
-print(response.text.encode('utf8'))text.encode('utf8'))
+# create OLD BD
 
-url = "https://{{apic}}/api/node/mo/uni/tn-{{tenant}}/ctx-{{vrf}}.json"
+url = "https://%s/api/node/mo/uni/tn-%s/BD-%s.json" % (apic, tenant, old_bd)
 
-payload = "{\n    \"fvCtx\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-{{tenant}}/ctx-{{vrf}}\",\n            \"name\": \"{{vrf}}\",\n            \"rn\": \"ctx-{{vrf}}\",\n            \"status\": \"created\"\n        },\n        \"children\": []\n    }\n}"
+payload = "{\n    \"fvBD\": {\n        \"attributes\": {\n            \"dn\": \"uni/tn-%s/BD-%s\",\n            \"name\": \"%s\",\n            \"rn\": \"BD-%s\",\n            \"status\": \"created\"\n        },\n        \"children\": [\n            {\n                \"fvRsCtx\": {\n                    \"attributes\": {\n                        \"tnFvCtxName\": \"%s\",\n                        \"status\": \"created,modified\"\n                    },\n                    \"children\": []\n                }\n            },\n            {\n                \"fvRsIgmpsn\": {\n                    \"attributes\": {\n                        \"tnIgmpSnoopPolName\": \"default\",\n                        \"status\": \"created,modified\"\n                    },\n                    \"children\": []\n                }\n            }\n        ]\n    }\n}" % (tenant, old_bd, old_bd, old_bd, vrf)
 headers = {
     'Content-Type': 'application/json'
 }
 
-response = requests.request("POST", url, headers=headers, data = payload)
+response = s.request("POST", url, headers=headers, data = payload, verify = False)
 
 print(response.text.encode('utf8'))
 
