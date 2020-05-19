@@ -6,9 +6,9 @@ import csv
 
 # Set up the variables
 
-with open("ACI PostMan Variable Values.csv", "r") as csvfile:
+with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
     reader = csv.DictReader(csvfile)
-    for row in reader:
+    for row in reader:        
         print(row)
 
 print("Let's configure the subnets on the Old BD")
