@@ -7,24 +7,17 @@ import csv
 
 # Setup the base lab variables
 
-with open("ACI PostMan Variable Values.csv", "r") as csvfile:
-    reader = csv.DictReader(csvfile)
-    for row in reader:
-        print(row)
+
 
 print("Let's set up the Lab for the Demo now.")
 print('What is the IP address of the APIC?')
 apic = input()
 user = getpass('what is your apic username?')
 password = getpass('what is your apic password?')
-print('what is the name of the new tenant?')
-tenant = input()
-print('what is the name of the new vrf?')
-vrf = input()
-print('what would you like to call your app profile?')
-app_profile = input()
-print('what is the Old BD?')
-old_bd = input()
+tenant = 'bdtest'
+vrf = 'test_vrf_1'
+app_profile = 'access'
+old_bd = 'old_bd'
 
 
 
