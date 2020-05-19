@@ -6,7 +6,7 @@ import csv
 
 # Set up the variables
 
-print("Let's configure the subnets on the Old BD")
+print("Let's migrate our VLAN's to new BD's now")
 print("First Let's log in")
 print('What is the ip address of the APIC?')
 apic = input()
