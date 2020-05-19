@@ -1,4 +1,4 @@
-﻿tenant,vrf,L3out,app-profile,old-bd,new-bd,subnet-network,subnet-ip,subnet-mask,epg
+﻿tenant,vrf,L3out,app_profile,old-bd,new_bd,subnet_network,subnet_ip,subnet_mask,epg
 bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_10,10.0.10,1,24,epg_10
 bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_20,10.0.20,1,24,epg_20
 bdtest,test_vrf_1,bdtest_L3out,access,BD_Test,test_bd_30,10.0.30,1,24,epg_30
