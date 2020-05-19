@@ -40,6 +40,8 @@ with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
         subnet_mask = row["subnet_mask"]
         print(f'the name of the epg is {row["epg"]}')
         epg = row["epg"]
+        print(f'the name of the vrf is {row["vrf"]}')
+        vrf = row["vrf"]
         line_count += 1
 
         # set session persistance for all the API calls
