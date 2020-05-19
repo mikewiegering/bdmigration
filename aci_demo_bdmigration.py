@@ -22,7 +22,8 @@ with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
         if line_count == 0:
             print(f'The variables for this script are {",".join(row)}')
             line_count += 1
-            
+
+        # let's set the variable values using the csv file dictionary    
         print(f'the name of the tenant is {row["tenant"]}')
         tenant = row["tenant"]
         print(f'the name of the app profile is {row["app_profile"]}')
@@ -30,7 +31,7 @@ with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
         print(f'the name of the old BD is {row["old_bd"]}')
         old_bd = row["old_bd"]
         print(f'the name of the new BD is {row["new_bd"]}')
-        old_bd = row["new_bd"]
+        new_bd = row["new_bd"]
         print(f'the name of the network is {row["subnet_network"]}')
         subnet_network = row["subnet_network"]
         print(f'the name of the network IP is {row["subnet_ip"]}')
