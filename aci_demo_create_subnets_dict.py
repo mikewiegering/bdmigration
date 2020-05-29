@@ -3,15 +3,21 @@
 import requests
 from getpass import getpass
 import csv
+import os
+from dotenv import load_dotenv
+
 
 # Set up the variables
 
+load_dotenv()
 print("Let's configure the subnets on the Old BD")
-print("First Let's log in")
-print('What is the ip address of the APIC?')
-apic = input()
-user = getpass('What is you username?')
-password = getpass('What is your password?')
+apic = os.getenv('APIC_HOST')
+user = os.getenv('APIC_USERNAME')
+password = os.getenv('APIC_PASSWORD')
+
+print(apic)
+print(user)
+print(password)
 
 with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
     reader = csv.DictReader(csvfile)
