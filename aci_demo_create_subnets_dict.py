@@ -13,11 +13,12 @@ load_dotenv()
 print("Let's configure the subnets on the Old BD")
 apic = os.getenv('APIC_HOST')
 user = os.getenv('APIC_USERNAME')
-password = os.getenv('APIC_PASSWORD')
+password = os.getenv('APIC_PASSWORD') or getpass('enter your apic password now')
 
 print(apic)
 print(user)
-print(password)
+print(password)  
+
 
 with open("ACI PostMan Variable Values.csv",  encoding='utf-8-sig') as csvfile:
     reader = csv.DictReader(csvfile)
