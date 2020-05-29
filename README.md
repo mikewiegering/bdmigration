@@ -2,7 +2,7 @@
 
 .env looks like this:
 
-# a comment that will be ignored.
+# These are the environment variables that your will need
 
   APIC_HOST="The IP Address of your APIC"
   
