@@ -4,8 +4,8 @@
 
 # a comment that will be ignored.
 
-  REDIS_ADDRESS=localhost:6379
+  APIC_HOST="The IP Address of your APIC"
   
-  MEANING_OF_LIFE=42
+  APIC_USERNAME="Your APIC Username"
   
-  MULTILINE_VAR="hello\nworld"
+  APIC_PASSWORD="Your APIC Password"
